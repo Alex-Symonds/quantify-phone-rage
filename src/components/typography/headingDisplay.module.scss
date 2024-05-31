@@ -1,0 +1,34 @@
+@use '../../app/_common' as c;
+
+.wrapperHeadingSubtitle{
+    display: flex;
+    flex-direction: column;
+}
+
+.displayHeading{
+    line-height: 1;
+}
+
+.displayHeadingSubtitle{
+    font-style: italic;
+}
+
+.main{
+    font-size: c.px-to-rem(42);
+}
+
+.panel{
+    font-size: c.px-to-rem(34);
+}
+
+.other{
+    font-size: c.px-to-rem(30);
+}
+
+.mainSubtitle{
+    font-size: c.px-to-rem(14);
+}
+
+.panelSubtitle{
+    font-size: c.px-to-rem(12);
+}
