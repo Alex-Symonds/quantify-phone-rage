@@ -1,16 +1,8 @@
-@use '../../app/_common' as c;
-
-.wrapperHeadingSubtitle{
-    display: flex;
-    flex-direction: column;
-}
+@use '../../../app/_common' as c;
 
 .displayHeading{
     line-height: 1;
-}
-
-.displayHeadingSubtitle{
-    font-style: italic;
+    margin: 0 0 c.px-to-rem(-3) 0;
 }
 
 .main{
@@ -21,7 +13,7 @@
     font-size: c.px-to-rem(34);
 }
 
-.other{
+.form{
     font-size: c.px-to-rem(30);
 }
 

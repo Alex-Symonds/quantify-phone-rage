@@ -1,0 +1,49 @@
+@use '../../../app/_common' as c;
+
+.divider{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: var(--dividerTextColour, currentColor);
+    line-height: 1;
+
+    &::before{
+        width: c.px-to-rem(10);
+        min-width: c.px-to-rem(10);
+        flex: 0 0 0;
+        margin: 0  c.px-to-rem(4) 0 0;
+    }
+    &::after{
+        flex-grow: 2;
+        margin: 0 0 0 c.px-to-rem(5);
+    }
+    
+    &::before, 
+    &::after{
+        display: block;
+        content: '';
+
+        background: var(--dividerLineColour, currentColor);
+    }
+
+}
+
+.subsection{
+    font-size: c.px-to-rem(14);
+
+    &::before, 
+    &::after{
+        height: c.px-to-rem(2);
+    }
+}
+
+.details{
+    font-size: c.px-to-rem(12);
+
+    &::before, 
+    &::after{
+        height: c.px-to-rem(2);
+    }
+}
+
+

@@ -1,0 +1,17 @@
+@use '../../../app/_common' as c;
+
+.plainHeading{
+    font-weight: 600;
+}
+
+.subsection{
+    font-size: c.px-to-rem(20); 
+}
+
+.detailsBox{
+    font-size: c.px-to-rem(14);
+}
+
+.subsectionSubtitle{
+    font-size: c.px-to-rem(14); 
+}
