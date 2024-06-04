@@ -6,7 +6,7 @@ const roboto = Roboto_Flex({
   subsets: ['latin']
 })
 
-import { HeadingDisplay } from "@/components/typography/headingDisplay";
+import { HeadingDisplay } from "@/components/typography/headings/Display";
 
 export default function Home() {
   return (
