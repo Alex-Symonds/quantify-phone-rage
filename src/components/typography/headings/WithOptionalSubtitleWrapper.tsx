@@ -9,7 +9,7 @@ import { HeadingOnly } from './HeadingOnly';
 
 interface I_SubtitleWrapper {
     styleInSubtitles? : string[],
-    subtitle : string,
+    subtitle? : string,
     children : React.ReactNode
 }
 
@@ -17,21 +17,25 @@ export function Heading(
     { stylesInMain, stylesInSubtitle, level, subtitle, title } 
     : I_Heading
 ){
-    const ConditionalWrapper = subtitle && subtitle !== ""
+    const wantSubtitles = subtitle && subtitle !== "";
+    const ConditionalWrapper = wantSubtitles
         ? SubtitleWrapper 
-        : Fragment;
-
-    return <ConditionalWrapper
-                styleInSubtitles = { stylesInSubtitle ?? []}
-                subtitle = { subtitle ?? "" }
-            >
+        : Fragment
+    ;
+    const conditionalProps = wantSubtitles
+        ? {
+            styleInSubtitles: stylesInSubtitle ?? [],
+            subtitle: subtitle ?? ""
+        }
+        : undefined
+    ;
+    return  <ConditionalWrapper {...conditionalProps} >
                 <HeadingOnly
                     stylesInMain = { stylesInMain ?? [] } 
                     level = { level } 
                     title = { title } 
                 />
             </ConditionalWrapper>
-
 }
 
 function SubtitleWrapper(
@@ -42,9 +46,12 @@ function SubtitleWrapper(
     return (
         <div className={ styles.wrapperHeadingSubtitle }>
             { children }
+        { subtitle !== undefined ?
             <span className={ `${styles.subtitle}${stylesIn !== "" ? ` ${ stylesIn }` : ''}` }>
                 { subtitle }
             </span>
+            : null
+        }
         </div>
     )
 }
