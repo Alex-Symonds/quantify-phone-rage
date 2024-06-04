@@ -1,0 +1,14 @@
+@use '../../../app/_common.scss' as c;
+
+
+.small{
+    font-size: c.px-to-rem(14);
+}
+
+.default,
+.medium{
+    font-size: c.px-to-rem(16);
+}
+
+
+

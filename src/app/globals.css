@@ -24,11 +24,17 @@
   --c-bg-main: rgb(255, 253, 253);
   --c-bodyText-on-main: var(--c-bodyText-on-light);
 
-  --c-bg-weak: var(--c-main-200);
+  --c-bg-veryWeak: var(--c-main-50);
+  --c-bodyText-on-veryWeak: var(--c-bodyText-on-light);
+
+  --c-bg-weak: var(--c-main-700);
   --c-bodyText-on-weak: var(--c-bodyText-on-light);
 
   --c-bg-strong: var(--c-main-saturated);
   --c-bodyText-on-strong: var(--c-bodyText-on-dark);
+
+  --c-bg-veryStrong: var(--c-main-saturated);
+  --c-bodyText-on-veryStrong: var(--c-bodyText-on-dark);
 
 
 
