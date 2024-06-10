@@ -1,38 +1,61 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Paragraph } from './Paragraph';
+import { BadgeCallOutcome } from './BadgeCallOutcome';
+
+import styles from "../../../components/storybookStyles.module.scss";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'typography/text/paragraph',
-  component: Paragraph,
+  title: 'badges/callOutcome',
+  component: BadgeCallOutcome,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
-} satisfies Meta<typeof Paragraph>;
+} satisfies Meta<typeof BadgeCallOutcome>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const DefaultParagraph: Story = {
+export const NoAnswer: Story = {
   args: {
-    children: 'A paragraph of text goes here.'
+    status: 'noAnswer'
   },
 };
 
-export const MediumParagraph: Story = {
-    args: {
-      size: 'medium',
-      children: 'A paragraph of text goes here.'
-    },
-  };
 
-export const SmallParagraph: Story = {
+export const ForwardedCall: Story = {
     args: {
-      size: 'small',
-      children: 'A paragraph of text goes here.'
+        status: 'forwarded'
     },
-  };
+};
+
+  
+export const AcceptedCall: Story = {
+    args: {
+      status: 'accepted'
+    },
+};
+
+  
+export const RejectedCall: Story = {
+    args: {
+      status: 'rejected'
+    },
+};
+
+  
+export const OutOfOffice: Story = {
+    args: {
+      status: 'out'
+    },
+};
+
+  
+export const CallError: Story = {
+    args: {
+      status: 'error'
+    },
+};

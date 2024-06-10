@@ -1,0 +1,35 @@
+.noAnswer{
+    background: var(--badge-ignored);
+    border-color: var(--badge-ignored);
+    color: var(--badge-contrast);
+}
+
+.forwarded{
+    background: var(--badge-ok-bg);
+    border-color: var(--badge-ok-border);
+    color: var(--badge-contrast);
+}
+
+.accepted{
+    background: var(--badge-accepted);
+    border-color: var(--badge-accepted);
+    color: var(--badge-contrast);
+}
+
+.rejected{
+    background: var(--badge-no);
+    border-color: var(--badge-no);
+    color: var(--badge-contrast);
+}
+
+.out{
+    background: var(--badge-secondary-bg);
+    border-color: var(--badge-ok-border);
+    color: var(--badge-ignored);
+}
+
+.error{
+    background: var(--badge-secondary-bg);
+    border-color: var(--badge-no);
+    color: var(--badge-no);
+}

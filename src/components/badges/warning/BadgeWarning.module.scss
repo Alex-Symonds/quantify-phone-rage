@@ -1,0 +1,14 @@
+@use '@/app/_common.scss' as c;
+
+
+.warning{
+    align-items: center;
+    background: var(--badge-warning-bg);
+    border: c.px-to-rem(1) solid var(--badge-warning-border);
+    color: var(--badge-warning-text);
+    display: flex;
+    font-size: c.px-to-rem(12);
+    font-weight: 600;
+    gap: c.px-to-rem(6);
+    padding: c.px-to-rem(3) c.px-to-rem(6);
+}

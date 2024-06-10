@@ -1,7 +1,16 @@
+@use '@/app/_common.scss' as c;
+
 .testGreenText{
     color: green;
 }
 
 .testBlueText{
     color: dodgerblue;
+}
+
+.testCustomNumberBadgeSize{
+    border-radius: 50%;
+    font-size: c.px-to-rem(46);
+    min-width: c.px-to-rem(66);
+    padding: c.px-to-rem(10) c.px-to-rem(4);
 }

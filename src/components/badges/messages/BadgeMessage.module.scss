@@ -1,0 +1,19 @@
+
+
+.msgUnhandled{
+    background: var(--badge-ignored);
+    border-color: var(--badge-ignored);
+    color: var(--badge-contrast);
+}
+
+.msgPartial{
+    background: var(--badge-ok-bg);
+    border-color: var(--badge-ok-border);
+    color: var(--badge-contrast);
+}
+
+.msgHandled{
+    background: var(--badge-secondary-bg);
+    border-color: var(--badge-ok-border);
+    color: var(--badge-ignored);
+}

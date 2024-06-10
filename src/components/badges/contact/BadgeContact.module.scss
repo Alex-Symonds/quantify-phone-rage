@@ -1,0 +1,36 @@
+@use '@/app/_common.scss' as c;
+
+
+.container{
+    display: flex;
+    align-items: center;
+    gap: c.px-to-rem(6);
+}
+
+.textContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.name{
+    font-size: c.px-to-rem(14);
+    font-weight: 700;
+}
+
+.role{
+    font-size: c.px-to-rem(11);
+}
+
+.card{
+    background: var(--c-bg-weakest);
+    border: c.px-to-rem(1) solid var(--contact-card-border);
+    border-radius: c.px-to-rem(2);
+    color: var(--c-emphasisText-on-light);
+    min-width: c.px-to-rem(100);
+    padding: c.px-to-rem(4) c.px-to-rem(12) c.px-to-rem(4) c.px-to-rem(8);
+}
+
+.noCard{
+    color: var(--c-bodyText-on-light);
+}

@@ -3,7 +3,7 @@ import { prepareStylesForHeadingAndSubtitle } from "./utils";
 
 import { Heading } from "./WithOptionalSubtitleWrapper";
 import styles from "./Divider.module.scss";
-import { cssClassTidying } from "@/components/utils";
+import { mergeStyleArrays } from "@/components/utils";
 
 
 const styleSettings = {
@@ -22,7 +22,7 @@ export function HeadingDivider(
         : styleSettings.default
     ;
 
-    const stylesArr = cssClassTidying({
+    const stylesArr = mergeStyleArrays({
         passedIn: stylesInMain,
         classesToAdd: [ styles.divider ],
         conditionalClasses: [ purposeStyle ]
