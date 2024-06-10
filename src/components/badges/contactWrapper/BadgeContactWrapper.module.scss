@@ -1,0 +1,16 @@
+@use '@/app/_common.scss' as c;
+
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    min-width: max-content;
+}
+
+.wrappedStatus{
+    position: relative;
+    left: c.px-to-rem(2);
+}

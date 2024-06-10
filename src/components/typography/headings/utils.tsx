@@ -1,5 +1,5 @@
 
-import { cssClassTidying } from "../../utils";
+import { mergeStyleArrays } from "../../utils";
 import { T_HeadingWithSubtitle } from "./types";
 
 
@@ -20,13 +20,13 @@ export function prepareStylesForHeadingAndSubtitle(
         : styleSettings.default
     ;
 
-    const mainStyles = cssClassTidying({
+    const mainStyles = mergeStyleArrays({
         passedIn: stylesInMain,
         classesToAdd: addToMain,
         conditionalClasses: [purposeStyle.h]
     });
 
-    const subtitleStyles = cssClassTidying({
+    const subtitleStyles = mergeStyleArrays({
         passedIn: stylesInSubtitle,
         classesToAdd: addToSubtitle,
         conditionalClasses: [purposeStyle.subtitle]

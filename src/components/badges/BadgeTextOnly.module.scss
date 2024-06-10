@@ -1,0 +1,11 @@
+@use '../../app/_common.scss' as c;
+
+
+.badge{
+    border-width: c.px-to-rem(1);
+    border-style: solid;
+    font-size: c.px-to-rem(14);
+    font-weight: 500;
+    line-height: 1;
+    padding: c.px-to-rem(2) c.px-to-rem(6);
+}

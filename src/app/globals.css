@@ -1,5 +1,6 @@
 :root {
   --c-main-0: #f6f4f4;
+  --c-main-25: #faf5f5;
   --c-main-50: #f2e8e8;
   --c-main-100: #ead4d4;
   --c-main-200: #dfd5d5; /*dbbfbf*/
@@ -15,29 +16,48 @@
   --c-main-saturated: #840000;
 
   
+  --c-tone-900: #212121;
 
+  --c-green: #1c9600;
 
   /* ------------------------------------------------- */
   --c-bodyText-on-light: black;
   --c-bodyText-on-dark: white;
 
+  --c-emphasisText-on-light: var(--c-main-950);
+
   --c-bg-main: rgb(255, 253, 253);
   --c-bodyText-on-main: var(--c-bodyText-on-light);
+
+  --c-bg-weakest: var(--c-main-25);
+  --c-bodyText-on-weakest: var(--c-bodyText-on-light);
 
   --c-bg-veryWeak: var(--c-main-50);
   --c-bodyText-on-veryWeak: var(--c-bodyText-on-light);
 
-  --c-bg-weak: var(--c-main-700);
+  --c-bg-weak: var(--c-main-200);
   --c-bodyText-on-weak: var(--c-bodyText-on-light);
 
-  --c-bg-strong: var(--c-main-saturated);
+  --c-bg-strong: var(--c-main-700);
   --c-bodyText-on-strong: var(--c-bodyText-on-dark);
 
   --c-bg-veryStrong: var(--c-main-saturated);
   --c-bodyText-on-veryStrong: var(--c-bodyText-on-dark);
 
+  --badge-contrast: var(--c-main-50);
 
+  --badge-no: var(--c-tone-900);
+  --badge-ignored: var(--c-main-900);
+  --badge-ok-bg: var(--c-main-500);
+  --badge-ok-border: var(--c-main-700);
+  --badge-accepted: var(--c-green);
+  --badge-secondary-bg: rgba(white, 0.45);
 
+  --badge-warning-bg: var(--c-main-saturated);
+  --badge-warning-text: var(--c-bodyText-on-dark);
+  --badge-warning-border: var(--c-main-900);
+
+  --contact-card-border: var(--c-main-300);
 
 
 
