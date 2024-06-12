@@ -1,5 +1,17 @@
 @use '@/app/_common.scss' as c;
 
+
+.iconLibraryContainer{
+    display: flex;
+    gap: 0.25rem;
+
+    svg {
+        path {
+            fill: black;
+        }
+    }
+}
+
 .testGreenText{
     color: green;
 }

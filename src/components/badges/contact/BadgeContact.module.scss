@@ -5,6 +5,10 @@
     display: flex;
     align-items: center;
     gap: c.px-to-rem(6);
+
+    svg {
+        height: c.px-to-rem(22);
+    }
 }
 
 .textContainer{

@@ -1,41 +1,43 @@
+import { iconSettings, svgIconSettings, T_svgIconSettings } from "./IconsLibrary";
 
+export type ICON_IDS = keyof typeof iconSettings | keyof typeof svgIconSettings;
 
-
-export type ICON_IDS = keyof typeof iconSettings;
-
-const iconSettings = {
-    contact: IconContact,
-    fallback: IconFallback,
-    warning: IconWarning,
-}
+export const ID_LIST = Object.keys(iconSettings).concat(Object.keys(svgIconSettings));
 
 interface I_Icon {
-    iconID : keyof typeof iconSettings,
+    iconID : ICON_IDS,
     size? : number,
 }
-
 export function Icon({ iconID, size } : I_Icon) : JSX.Element {
+    if(iconID in svgIconSettings){
+        return <SVGWrapperForIcon 
+                    settings = { svgIconSettings[iconID as keyof typeof svgIconSettings] } 
+                    size = { size } 
+                />
+    }
+
     const RequestedIcon = iconID in iconSettings 
-        ? iconSettings[iconID]
+        ? iconSettings[iconID as keyof typeof iconSettings]
         : iconSettings.fallback
     ;
-
-    return <RequestedIcon size={size} />
+    return <RequestedIcon />
 }
 
 
-interface I_IconSVG {
-    size? : number
+interface I_SVGIcon extends Pick<I_Icon, "size"> {
+    settings: T_svgIconSettings,
 }
+function SVGWrapperForIcon({ settings, size } : I_SVGIcon) : JSX.Element {
+    const SVGContents = settings.ReactNode;
 
-function IconContact({ size } : I_IconSVG){
-    return <div>o</div>
-}
+    const defaultSize = typeof settings.defaultSize === 'string'
+        ? { H: settings.defaultSize, W: settings.defaultSize }
+        : settings.defaultSize;
 
-function IconFallback({ size } : I_IconSVG){
-    return <div>[?]</div>
-}
-
-function IconWarning({ size } : I_IconSVG){
-    return <div>/!\</div>
+    return <svg width={ size ?? defaultSize.W } height={ size ?? defaultSize.H}
+                version="1.1" viewBox={ settings.viewbox } xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+            >
+                <SVGContents />
+            </svg>
 }
