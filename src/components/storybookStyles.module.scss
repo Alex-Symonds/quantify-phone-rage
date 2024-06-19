@@ -1,14 +1,22 @@
 @use '@/app/_common.scss' as c;
 
 
+.boldBackground{
+    background: var(--c-main-saturated);
+}
+
+
 .iconLibraryContainer{
     display: flex;
+    flex-wrap: wrap;
     gap: 0.25rem;
 
+    max-width: 100%;
+    color: black;
+
     svg {
-        path {
-            fill: black;
-        }
+        width: 29px;
+        height: 29px;
     }
 }
 

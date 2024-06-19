@@ -9,6 +9,11 @@
     display: flex;
     font-size: c.px-to-rem(12);
     font-weight: 600;
-    gap: c.px-to-rem(6);
-    padding: c.px-to-rem(3) c.px-to-rem(6);
+    gap: c.px-to-rem(4);
+    padding: c.px-to-rem(1) c.px-to-rem(5) c.px-to-rem(1) c.px-to-rem(3);
+
+    svg {
+        width: c.px-to-rem(20);
+        height: c.px-to-rem(20);
+    }
 }

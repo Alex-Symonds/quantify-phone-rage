@@ -59,9 +59,12 @@
 
   --contact-card-border: var(--c-main-300);
 
-
-
-
+  --mainnav-bg: var(--c-main-saturated);
+  --mainnav-contrast: var(--c-bodyText-on-dark);
+  --mainnav-focus-bg: rgba(255, 255, 255, 0.10);
+  --mainnav-hover-bg: rgba(255, 255, 255, 0.15);
+  --mainnav-hover-border: rgba(255, 255, 255, 0.3);
+  --mainnav-active-bg: rgba(255, 255, 255, 0.2);
 
 
 
@@ -100,8 +103,20 @@ a {
   text-decoration: none;
 }
 
+.visuallyHidden{
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
+
