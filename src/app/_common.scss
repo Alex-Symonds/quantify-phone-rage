@@ -2,3 +2,10 @@
     @return calc($px-num / 16) * 1rem;
 }
   
+
+
+
+
+@mixin focusFormat{
+    outline: px-to-rem(1) dotted;
+}

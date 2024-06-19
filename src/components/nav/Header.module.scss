@@ -1,0 +1,43 @@
+@use '../../app/_common' as c;
+
+.headerContainer{
+    // For the mobile expanding menu
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    width: 100vw;
+
+    padding: c.px-to-rem(8) c.px-to-rem(16);
+
+    background: var(--mainnav-bg);
+    color: var(--mainnav-contrast);
+
+    font-size: c.px-to-rem(16);
+
+    header{
+        position: relative;
+        z-index: 11;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .headerContainer{
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+
+        border-top-right-radius: 1rem;
+        margin: c.px-to-rem(4) 0 0 0;
+
+        width: c.px-to-rem(60);
+        max-width: c.px-to-rem(60);
+        min-height: 100vh;
+
+        font-size: c.px-to-rem(10);
+        padding: c.px-to-rem(24) c.px-to-rem(4);
+    }
+}

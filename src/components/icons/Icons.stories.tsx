@@ -1,11 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon, ID_LIST } from './Icons';
+import { Icon, ICON_ID_LIST, ICON_ID } from './Icons';
+
 
 import styles from "@/components/storybookStyles.module.scss";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'typography/icons',
+  title: 'icons',
   component: Icon,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -22,12 +23,14 @@ type Story = StoryObj<typeof meta>;
 // @ts-ignore (It's complaining about missing args, but those are added dynamically in the map)
 export const IconLibrary: Story = {
     render: () => {
-        return  <div className={ styles.iconLibraryContainer }>
-                  {
-                    ID_LIST.map(iconID => {
-                      return <Icon key={`${iconID}_inLib`} iconID={iconID} size={29} />
-                    })
-                  }
-                </div>
+        return  <>
+                  <div className={ styles.iconLibraryContainer }>
+                    {
+                      ICON_ID_LIST.map(iconID => {
+                        return <Icon key={`${iconID}_inLib`} iconID={iconID as ICON_ID} />
+                      })
+                    }
+                  </div>
+                </>
     }
 };
