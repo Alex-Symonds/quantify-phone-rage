@@ -31,7 +31,7 @@ export function BadgeContact(
 
     return (
         <div className={ stylesStr }>
-            <Icon iconID={ 'victim' } />
+            <Icon iconID={ 'contact' } />
             <div className = { styles.textContainer }>
                 <span className = { styles.name }>
                     { name }
