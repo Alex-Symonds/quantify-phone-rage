@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Fragment } from 'react';
 
 import { mergeStyleArraysIntoString } from "../utils"
 import { ICON_ID, Icon } from '../icons/Icons';
@@ -8,12 +9,12 @@ import { useHamburgerMenu } from './useHamburgerMenu';
 import { MutableRefObject, useRef } from 'react';
 
 interface I_NavBar{
-    isLoggedIn : boolean,
+    loggedInAs? : string
 }
 
-export function NavBar({ isLoggedIn } : I_NavBar){
+export function NavBar({ loggedInAs } : I_NavBar){
     const loggedInNav : I_NavItemWrapper[] = [
-        { href: "/logout", iconID: 'logOut', title: "LOG OUT" },
+        { href: "/logout", iconID: 'logOut', title: "LOG OUT", subtitle: loggedInAs },
         { href: "/callEditor", iconID: 'newCall', title: "FRESH HELL" },
         { href: "/calls", iconID: 'calls', title: "CALLS", divider: 'before' },
         { href: "/messages", iconID: 'messages', title: "MSGS", srOnly: "MESSAGES" },
@@ -21,6 +22,7 @@ export function NavBar({ isLoggedIn } : I_NavBar){
         { href: "/deleted", iconID: 'deleted', title: "DELETED" },
     ]
 
+    const isLoggedIn = loggedInAs !== null;
     const navDrawerRef : MutableRefObject<HTMLUListElement | null> = useRef(null);
     const menuButtonRef : MutableRefObject<HTMLButtonElement | null> = useRef(null);
     const { 
@@ -69,6 +71,7 @@ export function NavBar({ isLoggedIn } : I_NavBar){
                                 href = { navData.href }
                                 iconID = { navData.iconID }
                                 title = { navData.title }
+                                subtitle = { navData.subtitle }
                                 srOnly = { navData.srOnly }
                             />
                 })
@@ -83,15 +86,18 @@ interface I_NavItemWrapper {
     iconID : string,
     srOnly? : string,
     stylesIn? : string[],
+    subtitle? : string,
     title? : string,
 }
 
-function NavItemWrapper({ divider, href, iconID, stylesIn, srOnly, title } : I_NavItemWrapper){
+function NavItemWrapper({ divider, href, iconID, srOnly, stylesIn, subtitle, title } : I_NavItemWrapper){
 
     const myStyles = stylesIn === undefined
         ? styles.menuItem
         : mergeStyleArraysIntoString({ passedIn: stylesIn, classesToAdd: [styles.menuItem] })
     ;
+
+    const Wrapper = title && subtitle ? TitleWrapper : Fragment;
 
     return  <>
             { divider && divider === 'before' ? <hr /> : null }
@@ -107,14 +113,29 @@ function NavItemWrapper({ divider, href, iconID, stylesIn, srOnly, title } : I_N
                     </span>
                     : null
             }
+                    <Wrapper>
             { title ?
-                    <span aria-hidden={ srOnly !== undefined }>
-                        { title }
-                    </span>
-                    : null
+                        <span aria-hidden={ srOnly !== undefined }>
+                            { title }
+                        </span>
+                        : null
             }
+            { subtitle ?
+                        <span className={ styles.subtitle }>
+                            { subtitle }
+                        </span>
+                        : null
+            }
+                    </Wrapper>
                 </Link>
             </li>
             { divider && divider === 'after' ? <hr /> : null }
             </>
+}
+
+
+function TitleWrapper({children} : { children : React.ReactNode }){
+    return <div className={ styles.titleWrapper }>
+        { children }
+    </div>
 }

@@ -111,8 +111,27 @@
     &:active{
         background: var(--mainnav-active-bg);
     }
+
+    svg {
+        height: c.px-to-rem(24);
+        width: c.px-to-rem(24);
+
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
 }
 
+.titleWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.subtitle{
+    max-width: calc(80vw - #{c.px-to-rem(24)} - 1rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 @media screen and (min-width: 1000px){
     .menuExpanded{
@@ -140,5 +159,11 @@
         flex-direction: column;
         justify-content: stretch;
         gap: 0.25rem;
+    }
+
+    .subtitle{
+        max-width: 44px;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 }
