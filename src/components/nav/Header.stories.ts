@@ -1,10 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { userEvent, waitFor, within, expect, fn } from '@storybook/test';
+import { userEvent, within, fn } from '@storybook/test';
 
 import { Header } from './Header';
-
-import styles from "../../../components/storybookStyles.module.scss";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -33,19 +31,29 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const DesktopLoggedIn: Story = {
     args: {
-        isLoggedIn: true
-    }   
+        loggedInAs: "jane.doe@businessname.com"
+    },
+    parameters: {
+        viewport: {
+            defaultViewport: 'responsive',
+        }
+    }
 }
 
 export const DesktopLoggedOut: Story = {
     args: {
-        isLoggedIn: false
-    }    
+        loggedInAs: undefined
+    },
+    parameters: {
+        viewport: {
+            defaultViewport: 'responsive',
+        }
+    }  
 };
 
 export const MobileCollapsed: Story = {
     args: {
-        isLoggedIn: true
+        loggedInAs: "jane.doe@businessname.com"
     },
     parameters: {
         viewport: {
@@ -56,7 +64,7 @@ export const MobileCollapsed: Story = {
 
 export const MobileExpandedLoggedIn: Story = {
     args: {
-        isLoggedIn: true
+        loggedInAs: "jane.doe@businessname.com"
     },
     parameters: {
         viewport: {
@@ -75,6 +83,6 @@ export const MobileExpandedLoggedIn: Story = {
 export const MobileExpandedLoggedOut: Story = {
     ...MobileExpandedLoggedIn,
     args: {
-        isLoggedIn: false
+        loggedInAs: undefined
     }
 };

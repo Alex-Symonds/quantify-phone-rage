@@ -24,6 +24,13 @@
     }
 }
 
+.logoWrapper{
+    svg{
+        height: 40px;
+        width: 40px;
+    }
+}
+
 @media screen and (min-width: 1024px){
     .headerContainer{
         flex-direction: column;

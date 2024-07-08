@@ -8,18 +8,20 @@ import styles from './Header.module.scss';
 
 
 // Nav is not inside the actual header tags for accessibility reasons
-export function Header({ isLoggedIn } : { isLoggedIn : boolean }){
+export function Header({ loggedInAs } : { loggedInAs? : string }){
     return  <div className = {styles.headerContainer} >
                 <header>
                     <Link href={"/"} >
-                        <MyIcon iconID = {'logo'} />
+                        <span className={ styles.logoWrapper }>
+                            <MyIcon iconID = {'logo'} />
+                        </span>
                         <span className = "visuallyHidden">
                             HOME
                         </span>
                     </Link>
                 </header>
                 <NavBar 
-                    isLoggedIn = { isLoggedIn }
+                    loggedInAs = { loggedInAs }
                 />
             </div>
 }
