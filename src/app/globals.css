@@ -66,6 +66,9 @@
   --mainnav-hover-border: rgba(255, 255, 255, 0.3);
   --mainnav-active-bg: rgba(255, 255, 255, 0.2);
 
+  --boxParagraphBG: var(--c-main-200);
+  --boxParagraphActiveBorder: var(--c-main-saturated);
+
 
 
 

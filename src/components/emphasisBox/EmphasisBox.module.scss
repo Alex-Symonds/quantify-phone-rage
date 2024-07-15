@@ -1,0 +1,42 @@
+@use '@/app/_common.scss' as c;
+
+@mixin borderSquaredEnds{
+    display: block;
+    content: '';
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: c.px-to-rem(6);
+
+    background: var(--boxParagraphActiveBorder);
+}
+
+
+.boxParagraph{
+    background: var(--boxParagraphBG);
+    position: relative;
+}
+
+.defaultPadding{
+    padding: 0.5rem 1rem;
+}
+
+.leftOnly{
+    &:before{
+        @include borderSquaredEnds();
+        left: 0;
+    }  
+}
+
+.both{
+    &:before{
+        @include borderSquaredEnds();
+        left: 0;
+    } 
+
+    &:after{
+        @include borderSquaredEnds();
+        right: 0;
+    } 
+}
