@@ -85,10 +85,10 @@
   --button-onLightColour-activeSecondary: var(--c-main-saturated-activeSecondary);
 
   --button-toggleOn: var(--c-main-950);
-  --button-toggleOn-hover: var(--c-main-saturated);
-  --button-toggleOn-focus: var(--c-main-saturated-focus);
-  --button-toggleOn-active: var(--c-main-saturated-active);
 
+  --tagBorder: var(--c-main-700);
+  --tagReadOnlyBg: rgba(255, 255, 255, 0.45);
+  --tagReadOnlyBgContrast: var(--c-main-0);
 
 
   --max-width: 1100px;
