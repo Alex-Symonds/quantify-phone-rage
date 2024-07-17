@@ -1,0 +1,156 @@
+@use '@/app/_common.scss' as c;
+
+.button{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: c.px-to-rem(4);
+}
+
+.colour{
+    --mainColour: var(--button-onLightColour);
+
+    --mainColour-hover: var(--button-onLightColour-hover);
+    --mainColour-focus: var(--button-onLightColour-focus);
+    --mainColour-active: var(--button-onLightColour-active);
+
+    --mainColour-hoverSecondary: var(--button-onLightColour-hoverSecondary);
+    --mainColour-focusSecondary: var(--button-onLightColour-focusSecondary);
+    --mainColour-activeSecondary: var(--button-onLightColour-activeSecondary);
+
+    --contrastColour: white;
+}
+
+.white{
+    --mainColour: white;
+    --mainColour-hover: color-mix(in srgb, white 80%, transparent);
+    --mainColour-focus: color-mix(in srgb, white 70%, transparent);
+    --mainColour-active: color-mix(in srgb, white 90%, transparent);
+
+    --mainColour-hoverSecondary: var(--mainColour-hover);
+    --mainColour-focusSecondary: var(--mainColour-focus);
+    --mainColour-activeSecondary: var(--mainColour-active);
+
+    --contrastColour: var(--button-onLightColour);
+}
+
+
+
+
+.primary{
+    background: var(--mainColour);
+    border: none;
+    color: var(--contrastColour);
+    font-weight: 600;
+
+    &:hover{
+        background: var(--mainColour-hover);
+    }
+    &:focus{
+        @include c.focusFormat();
+        outline-color: var(--mainColour);
+        outline-offset: c.px-to-rem(2);
+        background: var(--mainColour-focus);
+    }
+    &:active{
+        background: var(--mainColour-active);
+    }
+}
+
+.secondary{
+    background: transparent;
+    color: var(--mainColour);
+    border-style: solid;
+    border-color: var(--mainColour);
+
+    &:hover{
+        border-color: var(--mainColour-hoverSecondary);
+        background: color-mix(in srgb, var(--contrastColour) 10%, transparent);
+        color: color-mix(in srgb, var(--mainColour) 80%, transparent);
+    }
+    &:focus{
+        @include c.focusFormat();
+        outline-color: var(--mainColour);
+        outline-offset: c.px-to-rem(2);
+        border-color: var(--mainColour-focusSecondary);
+        background: color-mix(in srgb, var(--contrastColour) 5%, transparent);
+        color: color-mix(in srgb, var(--mainColour) 70%, transparent);
+    }
+    &:active{
+        border-color: var(--mainColour-activeSecondary);
+        background: color-mix(in srgb, var(--contrastColour) 15%, transparent);
+        color: color-mix(in srgb, var(--mainColour) 90%, transparent);
+    }
+}
+
+.subtle{
+    background: transparent;
+    border: none;
+    color: var(--mainColour);
+
+    &:hover{
+        background: color-mix(in srgb, var(--mainColour) 5%, transparent);
+    }
+}
+
+
+
+.tiny{
+    font-size: c.px-to-rem(12);
+    border-width: c.px-to-rem(2);
+    padding: c.px-to-rem(4) c.px-to-rem(8);
+    gap: c.px-to-rem(3);
+
+    svg {
+        height: c.px-to-rem(16);
+    }
+}
+
+.medium{
+    font-size: c.px-to-rem(16);
+    border-width: c.px-to-rem(3);
+    padding: c.px-to-rem(8) c.px-to-rem(16);
+
+    gap: c.px-to-rem(11);
+
+    svg {
+        height: c.px-to-rem(22);
+    }
+}
+
+.large{
+    font-size: c.px-to-rem(20);
+    border-width: c.px-to-rem(4);
+    padding: c.px-to-rem(10) c.px-to-rem(24);
+
+    svg {
+        height: c.px-to-rem(26);
+    }
+}
+
+.extraLarge{
+    font-size: c.px-to-rem(26);
+    border-width: c.px-to-rem(5);
+    padding: c.px-to-rem(6) c.px-to-rem(8);
+
+    svg {
+        height: c.px-to-rem(32);
+    }
+}
+
+.iconOnly{
+    &.tiny{
+        padding: c.px-to-rem(3);
+    }
+    &.medium{
+        padding: c.px-to-rem(4);
+    }
+    &.large{
+        padding: c.px-to-rem(10);
+    }
+    &.extraLarge{
+        padding: c.px-to-rem(6);
+    }
+}

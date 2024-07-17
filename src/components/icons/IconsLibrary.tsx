@@ -162,8 +162,9 @@ function IconCheck(){
 
 
 function IconContact(){
-    // H: 28, W: 12
-    return  <svg version="1.1" viewBox="0 0 3.17 7.67" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    // The viewbox on this icon is not square (it's a tall and narrow icon, didn't want to "force" acres of space at the sides)
+    // preserveAspectRatio is there so users can set the height OR width in the CSS and the other will take care of itself
+    return  <svg version="1.1" viewBox="0 0 3.17 7.67" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
                 <path d="m1.59 0.102a1.59 1.59 0 0 0-1.59 1.59 1.59 1.59 0 0 0 1.59 1.59 1.59 1.59 0 0 0 1.59-1.59 1.59 1.59 0 0 0-1.59-1.59zm-0.413 0.654a0.252 0.352 0 0 1 0.00156 0 0.252 0.352 0 0 1 0.252 0.352 0.252 0.352 0 0 1-0.252 0.352 0.252 0.352 0 0 1-0.252-0.352 0.252 0.352 0 0 1 0.25-0.352zm0.761 0.0103a0.252 0.352 0 0 1 0.00206 0 0.252 0.352 0 0 1 0.252 0.352 0.252 0.352 0 0 1-0.252 0.352 0.252 0.352 0 0 1-0.252-0.352 0.252 0.352 0 0 1 0.25-0.352zm-0.368 1.04c0.00132-3.28e-4 0.00275 1.79e-5 0.00413 0 0.824 0.0214 1.11 0.878 0.834 0.878-0.216-6.61e-4 -0.404-0.545-0.853-0.545-0.424-1.23e-4 -0.656 0.556-0.832 0.555-0.225 0.00902 0.0148-0.887 0.848-0.887zm0.0196 1.63a1.59 1.59 0 0 0-1.58 1.49h-0.0031v2.64h3.17v-2.64h-0.00362a1.59 1.59 0 0 0-1.58-1.49z" 
                     fill="currentColor" strokeLinecap="round" strokeWidth=".277"/>
             </svg>
