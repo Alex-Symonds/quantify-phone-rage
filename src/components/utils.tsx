@@ -97,3 +97,20 @@ export function formatIntegerForDisplay(number : number) : string {
 
     return `${excessPrefix}${signPrefix}${unsignedStr}`;
 }
+
+
+interface I_GetCSS{
+    key? : string,
+    styles : { [key: string]: string },
+    fallback : string
+}
+
+export function getCSS({ 
+    key, styles, fallback 
+} : I_GetCSS){
+
+    return key && key in styles
+        ? styles[key]
+        : fallback
+    ;
+}

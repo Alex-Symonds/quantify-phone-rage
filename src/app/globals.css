@@ -14,6 +14,13 @@
   --c-main-950: #450000;
 
   --c-main-saturated: #840000;
+  --c-main-saturated-hover: #970101;
+  --c-main-saturated-focus: #9c2121;
+  --c-main-saturated-active: #a70000;
+  --c-main-saturated-hoverSecondary: #9e3333;
+  --c-main-saturated-focusSecondary: #9c2121;
+  --c-main-saturated-activeSecondary: #a70000;
+
 
   
   --c-tone-900: #212121;
@@ -69,6 +76,18 @@
   --boxParagraphBG: var(--c-main-200);
   --boxParagraphActiveBorder: var(--c-main-saturated);
 
+  --button-onLightColour: var(--c-main-saturated);
+  --button-onLightColour-hover: var(--c-main-saturated-hover);
+  --button-onLightColour-focus: var(--c-main-saturated-focus);
+  --button-onLightColour-active: var(--c-main-saturated-active);
+  --button-onLightColour-hoverSecondary: var(--c-main-saturated-hoverSecondary);
+  --button-onLightColour-focusSecondary: var(--c-main-saturated-focusSecondary);
+  --button-onLightColour-activeSecondary: var(--c-main-saturated-activeSecondary);
+
+  --button-toggleOn: var(--c-main-950);
+  --button-toggleOn-hover: var(--c-main-saturated);
+  --button-toggleOn-focus: var(--c-main-saturated-focus);
+  --button-toggleOn-active: var(--c-main-saturated-active);
 
 
 
