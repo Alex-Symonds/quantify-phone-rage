@@ -21,6 +21,7 @@ export const iconDictionary = {
     filterSolid: HeroIconFunnelSolid,
     forward: HeroIconForward,
     forwardSolid: HeroIconForwardSolid,
+    indeterminate: IconIndeterminate,
     logIn: IconLogIn,
     logo: IconLogo,
     logOut: IconLogOut,
@@ -194,6 +195,12 @@ function IconFallback(){
                 <path fillRule="evenodd" clipRule="evenodd" d="M6 2C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H18C20.2091 22 22 20.2091 22 18V6C22 3.79086 20.2091 2 18 2H6ZM6 4C4.89543 4 4 4.89543 4 6V15.9987L8.93868 8.99996L16.7009 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6ZM15.5 11C16.8807 11 18 9.88071 18 8.5C18 7.11929 16.8807 6 15.5 6C14.1193 6 13 7.11929 13 8.5C13 9.88071 14.1193 11 15.5 11Z" 
                     fill="currentColor"/>
             </svg>
+}
+//.794
+function IconIndeterminate(){
+    return <svg version="1.1" viewBox="0 0 6.35 6.35" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path d="m0.611 3.18h5.13" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.06"/>
+        </svg>
 }
 
 function IconLogIn(){

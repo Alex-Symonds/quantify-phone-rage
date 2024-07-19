@@ -1,0 +1,66 @@
+@use '@/app/_common.scss' as c;
+
+
+.label{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    cursor: pointer;
+
+    border-radius: c.px-to-rem(4);
+    outline-offset: c.px-to-rem(2);
+}
+
+// Pass pseudo-class styles to the decorative checkbox child via CSS variables
+.onDark{
+    --checkboxMain: var(--c-main-50);
+    --checkboxBG: var(--checkboxMain);
+    --checkboxBorder: var(--checkboxMain);
+    --checkboxContrast: var(--c-main-saturated);
+
+    &:hover{
+        --checkboxMain: var(--c-main-25);
+    }
+
+    &:focus,
+    &:focus-within{
+        --checkboxMain: var(--c-main-25);
+        --checkboxOutline: var(--checkboxMain) var(--focusOutlineNoColour);
+        outline: var(--checkboxOutline);
+    }
+
+    &:active{
+        --checkboxMain: white;
+    }
+
+    color: var(--checkboxMain);
+}
+
+.onLight{
+    --checkboxBG: var(--button-onLightColour);
+    --checkboxBorder: var(--button-onLightColour);
+    --checkboxContrast: var(--c-main-0);
+
+    &:hover{
+        --checkboxBG: var(--button-onLightColour-hover);
+        --checkboxBorder: var(--button-onLightColour-hover);
+        --checkboxContrast: var(--c-main-50);
+    }
+
+    &:focus,
+    &:focus-within{
+        --checkboxBG: var(--button-onLightColour-focus);
+        --checkboxBorder: var(--button-onLightColour-focus);
+        --checkboxOutline: var(--checkboxBorder) var(--focusOutlineNoColour);
+        --checkboxContrast: var(--c-main-50);
+
+        outline: var(--checkboxOutline);
+    }
+
+    &:active{
+        --checkboxBG: var(--button-onLightColour-active);
+        --checkboxBorder: var(--button-onLightColour-active);
+        --checkboxContrast: var(--c-main-100);
+    }
+}

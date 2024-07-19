@@ -1,0 +1,39 @@
+/*
+    This file enables me to do this:
+        import { CSSTransition } from 'react-transition-group';
+        import animStyles from './Anim.module.scss';
+
+        <CSSTransition
+            ...otherProps
+            classNames={{...animStyles}}
+        >
+
+*/
+
+@use '@/app/_common.scss' as c;
+
+// This must match the transition duration in the React component
+$transitionDuration: 150ms;
+
+.enter{
+    transform: scale(0.1);
+    padding: c.px-to-rem(4);
+}
+.enterActive {
+    transform: scale(1);
+    background: var(--checkboxBG);
+    transition: all $transitionDuration ease-in-out;
+}
+.enterDone{
+    padding: 0;
+}
+.exit {
+    transform: scale(1);
+    background: var(--checkboxBG);
+    border-radius: 100%;
+    padding: c.px-to-rem(5);
+}
+.exitActive {
+    transform: scale(0.3);
+    transition: transform $transitionDuration ease-in-out;
+}

@@ -1,0 +1,70 @@
+@use '@/app/_common.scss' as c;
+
+
+.checkbox{
+    height: c.px-to-rem(28);
+    width: c.px-to-rem(28);
+
+    border: c.px-to-rem(3) solid var(--checkboxBorder);
+    border-radius: c.px-to-rem(4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: c.px-to-rem(28);
+    width: c.px-to-rem(28);
+
+    background: var(--checkboxContrast);
+    color: var(--checkboxContrast);
+}
+
+.filled{
+    background: var(--checkboxBG);
+}
+
+.animWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        height: 100%;
+        width: 100%;
+    }
+}
+// .grow{
+//     animation: growCheckboxContents 300ms linear 50ms normal forwards ;
+// }
+// .shrink{
+//     animation: growCheckboxContents 300ms linear 50ms reverse forwards;
+// }
+// @keyframes growCheckboxContents {
+//     from{
+//         height: c.px-to-rem(1);
+//         width: c.px-to-rem(1);
+//     }
+//     to{
+//         height: c.px-to-rem(20);
+//         width: c.px-to-rem(20);
+//     }
+// }
+
+
+// .onChangeAnim{
+//     &-enter{
+//         transform: scale(0.5);
+//     }
+//     &-enter-active {
+//         transform: scale(1);
+//         transition: transform 1000ms linear;
+//     }
+//     &-exit {
+//         transform: scale(1);
+//     }
+//     &-exit-active {
+//         transform: scale(0.5);
+//         transition: transform 1000ms linear;
+//     }
+// }
+
