@@ -36,6 +36,34 @@ export const Primary: Story = {
     },
 };
 
+export const PrimaryHover: Story = {
+    args: {
+        ...Primary.args,
+    },
+    parameters: {
+        pseudo: { hover: true }
+    }
+};
+
+export const PrimaryFocus: Story = {
+    args: {
+        ...Primary.args,
+    },
+    parameters: {
+        pseudo: { focus: true }
+    }
+};
+
+export const PrimaryActive: Story = {
+    args: {
+        ...Primary.args,
+    },
+    parameters: {
+        pseudo: { active: true }
+    }
+};
+
+
 export const Secondary: Story = {
     args: {
         ...DefaultButton.args,
@@ -43,12 +71,66 @@ export const Secondary: Story = {
     }
 }
 
+export const SecondaryHover: Story = {
+    args: {
+        ...Secondary.args,
+    },
+    parameters: {
+        pseudo: { hover: true }
+    }
+};
+
+export const SecondaryFocus: Story = {
+    args: {
+        ...Secondary.args,
+    },
+    parameters: {
+        pseudo: { focus: true }
+    }
+};
+
+export const SecondaryActive: Story = {
+    args: {
+        ...Secondary.args,
+    },
+    parameters: {
+        pseudo: { active: true }
+    }
+};
+
 export const Subtle: Story = {
     args: {
         ...DefaultButton.args,
         formatting: "subtle",
     }
 }
+
+export const SubtleHover: Story = {
+    args: {
+        ...Subtle.args,
+    },
+    parameters: {
+        pseudo: { hover: true }
+    }
+};
+
+export const SubtleFocus: Story = {
+    args: {
+        ...Subtle.args,
+    },
+    parameters: {
+        pseudo: { focus: true }
+    }
+};
+
+export const SubtleActive: Story = {
+    args: {
+        ...Subtle.args,
+    },
+    parameters: {
+        pseudo: { active: true }
+    }
+};
 
 export const Large: Story = {
     args: {
