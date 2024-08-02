@@ -1,0 +1,47 @@
+@use '@/app/_common.scss' as c;
+
+
+@mixin overlaidBorder{
+    content: "";
+    display: block;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    border-style: dotted;
+    border-color: var(--c-bg-strong);
+    border-width: c.px-to-rem(1) 0;
+}
+
+
+.optionWrapper{
+    padding: c.px-to-rem(4) c.px-to-rem(8);
+    
+    cursor: pointer;
+    position: relative;
+
+    // Hover formatting doubles up for "keyboard user's current selection"
+    &:hover,
+    &Selected{
+        @include c.formElement-hover();
+        &:after{
+            @include overlaidBorder();
+        }
+    }
+
+    &:focus{
+        @include c.formElement-focus();
+    }
+
+    &:active{
+        @include c.formElement-active();
+        &:after{
+            @include overlaidBorder();
+            border-style: dashed;
+        }
+    }
+}
+

@@ -51,6 +51,8 @@
   --c-bg-veryStrong: var(--c-main-saturated);
   --c-bodyText-on-veryStrong: var(--c-bodyText-on-dark);
 
+  --c-highlightText-on-weakish: var(--c-main-saturated);
+
   --badge-contrast: var(--c-main-50);
 
   --badge-no: var(--c-tone-900);
@@ -89,6 +91,12 @@
   --tagBorder: var(--c-main-700);
   --tagReadOnlyBg: rgba(255, 255, 255, 0.45);
   --tagReadOnlyBgContrast: var(--c-main-0);
+
+  --formElementBorder: var(--c-main-saturated);
+  --formElementBorderHover: var(--c-main-saturated-focus);
+  --formElementBorderFocus:var(--c-main-saturated-focus);
+
+
 
 
 

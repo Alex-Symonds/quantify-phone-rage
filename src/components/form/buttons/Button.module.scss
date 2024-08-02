@@ -93,6 +93,11 @@
     &:hover{
         background: color-mix(in srgb, var(--mainColour) 5%, transparent);
     }
+
+    &:focus{
+        @include c.focusFormat();
+        outline-offset: c.px-to-rem(2);
+    }
 }
 
 

@@ -114,3 +114,11 @@ export function getCSS({
         : fallback
     ;
 }
+
+
+export function getNumOptions(
+    options : any[] | null | undefined 
+    ) : number {
+
+    return options ? options.length : 0;
+}
