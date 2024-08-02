@@ -1,0 +1,26 @@
+@use '@/app/_common.scss' as c;
+
+
+.optionsDropdown{
+    @include c.formElement();
+
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    right: -1px;
+
+    height: fit-content;
+    max-height: 30vh;
+    overflow-y: auto;
+}
+
+.visibleNumResults{
+    font-size: c.px-to-rem(12);
+    padding: c.px-to-rem(2) c.px-to-rem(4);
+    background: var(--c-bg-veryWeak);
+    border-bottom: c.px-to-rem(1) var(--c-bg-weak) solid;
+}
+
+.invisibleNumResults{
+    @include c.visually-hidden();
+}

@@ -1,0 +1,25 @@
+@use '@/app/_common.scss' as c;
+
+.combobox{
+    @include c.formElement();
+
+    position: relative;
+    display: flex;
+    align-items: stretch;
+
+    input{
+        border: none;
+        padding: c.px-to-rem(2) c.px-to-rem(8);
+
+
+        &:focus{
+            @include c.focusFormat();
+            outline-offset: c.px-to-rem(1);
+        }
+    }
+}
+
+.inputWrapper{
+    display: flex;
+    align-items: stretch;
+}

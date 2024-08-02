@@ -4,6 +4,8 @@ import styles from './Button.module.scss';
 import { getCSS, mergeStyleArraysIntoString } from '@/components/utils';
 
 interface I_Button {
+    ariaLabel? : string,
+    ariaPressed? : boolean,
     formatting?: "primary" | "secondary" | "subtle",
     iconID? : ICON_ID,
     isOnDark? : boolean,
@@ -16,13 +18,15 @@ interface I_Button {
 }
 
 export function Button({
-    formatting, iconID, isOnDark, label, onClick, size, srOnly, 
+    ariaLabel, ariaPressed, formatting, iconID, isOnDark, label, onClick, size, srOnly, 
 } : I_Button){
 
     const CSS = getStylesString({ formatting, iconID, isOnDark, label, size });
     const isVisuallyEmpty = iconID === undefined && label === undefined;
 
     return  <button
+                aria-label={ariaLabel}
+                aria-pressed={ariaPressed}
                 className = { CSS }
                 onClick = { onClick }
             >

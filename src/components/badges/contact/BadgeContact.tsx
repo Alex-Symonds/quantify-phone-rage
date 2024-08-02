@@ -6,17 +6,21 @@ import { mergeStyleArraysIntoString, stylesArrToString } from "@/components/util
 import styles from "./BadgeContact.module.scss";
 
 
-export interface I_BadgeContact {
-    name : string,
-    role? : string,
+export type T_PropsBadgeContact = 
+    T_PropsContactCard &
+{
     stylesIn? : string[],
     wantCard? : boolean
 }
 
+export type T_PropsContactCard = {
+    name : string,
+    role? : string,
+}
 
 export function BadgeContact(
     { name, role, stylesIn, wantCard } 
-    : I_BadgeContact 
+    : T_PropsBadgeContact 
 ){
     const cardStyles = wantCard ? styles.card : styles.noCard;
     const myStyles = [styles.container, cardStyles];

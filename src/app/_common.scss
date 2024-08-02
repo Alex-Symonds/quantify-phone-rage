@@ -3,9 +3,45 @@
 }
   
 
+@mixin visually-hidden{
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
 
 
 
 @mixin focusFormat{
     outline: px-to-rem(1) dotted;
+    position: relative;
+    z-index: 9999999;
+}
+
+@mixin formElement{
+    background: var(--c-bg-weakest);
+    border: px-to-rem(1) solid var(--formElementBorder);
+    border-radius: px-to-rem(3);
+    color: var(--c-bodyText-on-weakest);
+}
+
+@mixin formElement-hover{
+    border-color: var(--formElementBorderHover);
+    background: var(--c-bg-main);
+    color: var(--c-highlightText-on-weakish);
+}
+
+@mixin formElement-focus{
+    @include focusFormat();
+    color: var(--c-highlightText-on-weakish);
+}
+
+@mixin formElement-active{
+    border-color: var(--formElementBorderHover);
+    background: var(--c-bg-veryWeak);
+    color: var(--c-bodyText-on-veryWeak);
 }
