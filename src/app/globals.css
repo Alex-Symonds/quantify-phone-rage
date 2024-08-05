@@ -27,6 +27,9 @@
 
   --c-green: #1c9600;
 
+  --c-error: #ec0000;
+  --c-errorText-on-weak:rgb(179, 0, 0)0;
+
   /* ------------------------------------------------- */
   --c-bodyText-on-light: black;
   --c-bodyText-on-dark: white;

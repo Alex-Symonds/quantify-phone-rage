@@ -1,0 +1,69 @@
+@use '@/app/_common.scss' as c;
+
+.input{
+
+    overflow: auto;
+    padding: c.px-to-rem(6) c.px-to-rem(8);
+    &:focus{
+        @include c.focusFormat();
+        outline-offset: c.px-to-rem(1);
+    }
+}
+
+.default{
+    @include c.formElement();
+    &:active{
+        @include c.formElement-active();
+    }
+}
+
+.error{
+    @include c.formElement-error();
+}
+
+.errorWrapper{
+    padding-right: c.px-to-rem(24);
+}
+
+.errorWrapperOn{
+    position: relative;
+
+    &:before,
+    &:after{
+        content: '';
+        display: block;
+        position: absolute;
+
+        top: c.px-to-rem(5);
+        bottom: c.px-to-rem(5);
+        right: c.px-to-rem(8);
+
+        width: c.px-to-rem(3);
+        background: var(--c-error);
+
+        pointer-events: none;
+    }
+    &:before{
+        transform: rotate(-45deg);
+    }
+    &:after{
+        transform: rotate(45deg);
+    }
+
+
+    // &:after{
+    //     content: '';
+    //     display: block;
+    //     position: absolute;
+
+
+    //     bottom: 0;
+    //     left: c.px-to-rem(2);
+    //     right: c.px-to-rem(2);
+    //     height: c.px-to-rem(2);
+
+    //     background: var(--c-error);
+
+    //     pointer-events: none;
+    // }
+}
