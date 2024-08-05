@@ -42,6 +42,14 @@
 
 @mixin formElement-active{
     border-color: var(--formElementBorderHover);
+    border-radius: px-to-rem(2);
     background: var(--c-bg-veryWeak);
     color: var(--c-bodyText-on-veryWeak);
+}
+
+@mixin formElement-error{
+    background: var(--c-bg-weakest);
+    border: px-to-rem(2) solid var(--formElementBorder);
+    border-radius: px-to-rem(3);
+    color: var(--c-errorText-on-weak);
 }

@@ -58,8 +58,6 @@ export function ComboboxContacts({
         handleChangeToInput(e.target.value);
     }
 
-    showNumResults = showNumResults ?? false;
-
     return  <ComboboxUI
                 activeDescendantId = { optionsListKit.activeDescendantId }
                 inputId = { optionsListKit.inputId }
