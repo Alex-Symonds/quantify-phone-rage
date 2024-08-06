@@ -1,8 +1,6 @@
 @use '@/app/_common.scss' as c;
 
 .combobox{
-    @include c.formElement();
-
     position: relative;
     display: flex;
     align-items: stretch;
@@ -10,7 +8,6 @@
     input{
         border: none;
         padding: c.px-to-rem(2) c.px-to-rem(8);
-
 
         &:focus{
             @include c.focusFormat();
@@ -22,4 +19,15 @@
 .inputWrapper{
     display: flex;
     align-items: stretch;
+}
+
+.default{
+    @include c.formElement();
+    &:active{
+        @include c.formElement-active();
+    }
+}
+
+.error{
+    @include c.formElement-error();
 }

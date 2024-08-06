@@ -16,35 +16,47 @@ import {
         T_PropsComboboxInput,
         T_PropsComboboxUI
     } from "./types";
+import { ErrorWrapper } from "../../errorWrapper/ErrorWrapper";
+import { mergeStyleArraysIntoString } from "@/components/utils";
 
 
 export const ComboboxUI = forwardRef(function ComboboxUI(props : T_PropsComboboxUI, ref : ForwardedRef<HTMLDivElement | null>){
+    
+    const css = mergeStyleArraysIntoString({
+        classesToAdd: [styles.combobox],
+        conditionalClasses: [ props.hasError ? styles.error : styles.default ]
+    });
+    
     return (
-        <div 
-            className={ styles.combobox } 
-            ref={ ref }
+        <ErrorWrapper
+            hasError = { props.hasError }
         >
-            <ComboboxInput 
-                inputId={ props.inputId }
-                activeDescendantId={ props.activeDescendantId }
-                optionsVisible={ props.optionsVisible }
-                optionsListId={ props.optionsListId }
+            <div 
+                className={ css } 
+                ref={ ref }
+            >
+                <ComboboxInput 
+                    inputId={ props.inputId }
+                    activeDescendantId={ props.activeDescendantId }
+                    optionsVisible={ props.optionsVisible }
+                    optionsListId={ props.optionsListId }
 
-                onKeyDown={ (e) => props.onKeyDown(e) }
-                handleChangeToInput = { props.handleChangeToInput }
-                name = { props.name }
-                value = { props.value }
-            />
-            
-            <ComboBoxOptionsToggleButton 
-                optionsVisible = { props.optionsVisible }
-                size = { props.size }
-                toggleOptionVisibility = { props.toggleOptionVisibility }
-            />
+                    onKeyDown={ (e) => props.onKeyDown(e) }
+                    handleChangeToInput = { props.handleChangeToInput }
+                    name = { props.name }
+                    value = { props.value }
+                />
+                
+                <ComboBoxOptionsToggleButton 
+                    optionsVisible = { props.optionsVisible }
+                    size = { props.size }
+                    toggleOptionVisibility = { props.toggleOptionVisibility }
+                />
 
-            { props.children }
+                { props.children }
 
-        </div>
+            </div>
+        </ErrorWrapper>
     )
 })
 

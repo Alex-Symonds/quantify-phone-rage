@@ -6,17 +6,16 @@ import { ComboboxOptionWrapper } from "../options/ComboboxOptionWrapper";
 import { useOptionsList } from "../options/useOptionsList";
 
 import { ComboboxUI } from "./shared/Combobox";
-import { getOptionIds, getOptionDataObject } from "./shared/utils";
-import { T_OptionData, T_PropsComboboxInput, T_PropsComboBoxOptionsToggleButton,  } from "./shared/types";
+import { getOptionIds } from "./shared/utils";
+import { T_OptionData, T_PropsComboboxUI } from "./shared/types";
 import { T_UseOptionsListProps } from "../options/useOptionsList";
 
 type T_PropsComboboxText = 
-    Pick<T_PropsComboboxInput, 
+    Pick<T_PropsComboboxUI, 
         "name"
         | "value"
-    > &
-    Pick<T_PropsComboBoxOptionsToggleButton,
-        "size"
+        | "size"
+        | "hasError"
     > &
     Pick<T_UseOptionsListProps,
         "onOptionPick"
@@ -31,7 +30,7 @@ type T_PropsComboboxText =
 }
 
 export function ComboboxText({ 
-    handleChangeToInput, id, name, onOptionPick, options, optionsVisibleOnInit, selectedOptions = [], showNumResults, size, value 
+    handleChangeToInput, hasError, id, name, onOptionPick, options, optionsVisibleOnInit, selectedOptions = [], showNumResults, size, value 
 } : T_PropsComboboxText){  
     
     const refToSupportOutsideClickClosing = useRef(null);
@@ -56,6 +55,7 @@ export function ComboboxText({
                 activeDescendantId = { optionsListKit.activeDescendantId }
                 inputId = { optionsListKit.inputId }
                 handleChangeToInput = { onChange }
+                hasError = { hasError }
                 onKeyDown = { (e) =>  optionsListKit.onKeyDown(e) }
                 optionsListId = { optionsListKit.optionsListId }
                 optionsVisible = { optionsListKit.optionsVisible }
@@ -83,6 +83,16 @@ function TextOptions({ activeId, onOptionPick, optionIdPrefix, options, optionsL
     
     showNumResults = showNumResults ?? false;
 
+    function getOptionDataObject(option : string | T_OptionData){
+        if(typeof option !== 'string' && 'optionId' in option && 'displayText' in option){
+            return option;
+        }
+        return {
+            displayText: option,
+            optionId: option.replaceAll(" ", ""),
+        }
+    }
+
     return <>
     {  optionsVisible
         ?   <OptionsDropdownWrapper
@@ -108,3 +118,4 @@ function TextOptions({ activeId, onOptionPick, optionIdPrefix, options, optionsL
     }
     </>
 }
+

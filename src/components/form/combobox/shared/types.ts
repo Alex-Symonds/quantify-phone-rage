@@ -20,6 +20,7 @@ export type T_OptionData =
 export type T_PropsComboboxUI = 
     T_PropsComboBoxOptionsToggleButton &  
     T_PropsComboboxInput & {
+    hasError? : boolean,
     children : ReactNode,
 }
 
