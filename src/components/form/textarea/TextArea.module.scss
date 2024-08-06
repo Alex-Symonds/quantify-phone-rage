@@ -1,0 +1,24 @@
+@use '@/app/_common.scss' as c;
+
+.textarea{
+    font-family: inherit;
+    padding: c.px-to-rem(6) c.px-to-rem(8);
+
+    max-height: 60vh;
+
+    &:focus{
+        @include c.focusFormat();
+        outline-offset: c.px-to-rem(1);
+    }
+}
+
+.default{
+    @include c.formElement();
+    &:active{
+        @include c.formElement-active();
+    }
+}
+
+.error{
+    @include c.formElement-error();
+}
