@@ -14,8 +14,6 @@
 }
 
 
-
-
 @mixin focusFormat{
     outline: px-to-rem(1) dotted;
     position: relative;
@@ -53,3 +51,4 @@
     border-radius: px-to-rem(3);
     color: var(--c-errorText-on-weak);
 }
+

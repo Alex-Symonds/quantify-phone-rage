@@ -1,0 +1,50 @@
+@use '@/app/_common.scss' as c;
+
+.errorWrapper{
+    padding-bottom: c.px-to-rem(24);
+}
+
+.errorWrapperOn{
+    position: relative;
+
+    &:before,
+    &:after{
+        content: '';
+        display: block;
+        position: absolute;
+
+        bottom: c.px-to-rem(0);
+        left: c.px-to-rem(14);
+
+        height: c.px-to-rem(24);
+        width: c.px-to-rem(3);
+        background: var(--c-error);
+
+        pointer-events: none;
+    }
+    &:before{
+        transform: rotate(-45deg);
+    }
+    &:after{
+        transform: rotate(45deg);
+    }
+}
+
+@media screen and (min-width: 800px){
+    .errorWrapper{
+        padding-right: c.px-to-rem(24);
+    }
+
+    .errorWrapperOn{
+        &:before,
+        &:after{
+            top: c.px-to-rem(5);
+            bottom: auto;
+            right: c.px-to-rem(8);
+            left: auto;
+
+            height: c.px-to-rem(24);
+            width: c.px-to-rem(3);
+        }
+    }
+}

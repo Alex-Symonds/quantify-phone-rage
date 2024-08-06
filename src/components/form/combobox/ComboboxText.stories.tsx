@@ -49,6 +49,13 @@ export const ObjectOptions: Story = {
   },
 };
 
+export const Error: Story = {
+  args: {
+    ...Default.args,
+    hasError: true,
+  }
+}
+
 function ComboboxWithHooks(){
   const [value, setValue] = useState("");
 

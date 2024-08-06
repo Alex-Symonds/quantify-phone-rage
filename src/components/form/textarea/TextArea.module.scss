@@ -1,8 +1,11 @@
 @use '@/app/_common.scss' as c;
 
-.input{
-    overflow: auto;
+.textarea{
+    font-family: inherit;
     padding: c.px-to-rem(6) c.px-to-rem(8);
+
+    max-height: 60vh;
+
     &:focus{
         @include c.focusFormat();
         outline-offset: c.px-to-rem(1);
