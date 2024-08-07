@@ -1,0 +1,5 @@
+@use '@/app/_common.scss' as c;
+
+.default{
+    @include c.labels();
+}

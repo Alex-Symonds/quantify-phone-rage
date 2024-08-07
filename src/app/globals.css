@@ -34,6 +34,8 @@
   --c-bodyText-on-light: black;
   --c-bodyText-on-dark: white;
 
+  --c-labels: #363636;
+
   --c-emphasisText-on-light: var(--c-main-950);
 
   --c-bg-main: rgb(255, 253, 253);
