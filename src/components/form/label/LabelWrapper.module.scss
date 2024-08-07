@@ -1,0 +1,22 @@
+@use '@/app/_common.scss' as c;
+
+.wrapper{
+    display: flex;
+    color: var(--c-labels);
+}
+
+
+.left{
+    flex-direction: row;
+    gap: c.px-to-rem(8);
+}
+
+.right{
+    flex-direction: row-reverse;
+    gap: c.px-to-rem(8);
+}
+
+.above{
+    flex-direction: column;
+    gap: c.px-to-rem(3);
+}
