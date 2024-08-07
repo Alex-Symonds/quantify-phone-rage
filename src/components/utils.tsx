@@ -26,7 +26,7 @@ export function stylesArrToString(arrayOfStyles : string[]){
 interface I_MergeStyleArrays {
     passedIn? : string[], 
     classesToAdd? : string[], 
-    conditionalClasses? : (string|undefined)[]
+    conditionalClasses? : (string | undefined)[]
 }
 
 export function mergeStyleArraysIntoString(
@@ -116,9 +116,3 @@ export function getCSS({
 }
 
 
-export function getNumOptions(
-    options : any[] | null | undefined 
-    ) : number {
-
-    return options ? options.length : 0;
-}
