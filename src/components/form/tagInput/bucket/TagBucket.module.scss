@@ -1,0 +1,32 @@
+@use '@/app/_common.scss' as c;
+
+
+.tagBucket{
+    padding: c.px-to-rem(8) c.px-to-rem(8);
+
+    display: flex;
+    flex-flow: wrap;
+    gap: c.px-to-rem(6);
+
+    position: relative;
+    z-index: 1;
+
+    &:focus-within{
+        @include c.focusFormat();
+        outline-offset: c.px-to-rem(1);
+    }
+}
+
+.default{
+    @include c.formElement();
+    top: c.px-to-rem(-1);
+
+    &:active{
+        @include c.formElement-active();
+    }
+}
+
+.error{
+    @include c.formElement-error();
+    top: c.px-to-rem(-2);
+}

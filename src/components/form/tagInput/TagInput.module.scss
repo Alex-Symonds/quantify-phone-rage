@@ -1,0 +1,8 @@
+@use '@/app/_common.scss' as c;
+
+.tagInputWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: c.px-to-rem(-2);
+}
