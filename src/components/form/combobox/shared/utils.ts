@@ -28,3 +28,18 @@ export function getOptionIds(options : string[] | T_OptionId[]) : string[]{
                 ? options.map(ele  => ele.optionId)
                 : [];
 }
+
+/**
+ * Converts a string into OptionData format; leaves existing OptionData alone.
+ * @param option - Either a string or a T_OptionData
+ * @returns - T_OptionData
+ */
+export function getOptionDataObject(option : string | T_OptionData){
+    if(typeof option !== 'string' && 'optionId' in option && 'displayText' in option){
+        return option;
+    }
+    return {
+        displayText: option,
+        optionId: option.replaceAll(" ", ""),
+    }
+}

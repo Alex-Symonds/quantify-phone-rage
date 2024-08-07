@@ -1,10 +1,6 @@
-
-
 import { mergeStyleArraysIntoString } from '@/components/utils';
 import styles from './Input.module.scss';
 import { ChangeEvent } from 'react';
-import { ErrorWrapper } from '../errorWrapper/ErrorWrapper';
-
 
 type T_PropsInput = {
     handleChange: (e : ChangeEvent<HTMLInputElement>) => void,
@@ -13,11 +9,9 @@ type T_PropsInput = {
     stylesIn? : string[],
     type?: "text" | "email" | "tel" | "date" | "time",
     value: string,
-    wrapperStylesIn? : string[],
 }
 
-
-export function Input({ handleChange, hasError, id, stylesIn, type, value, wrapperStylesIn } : T_PropsInput){
+export function Input({ handleChange, hasError, id, stylesIn, type, value } : T_PropsInput){
 
     const CSS = mergeStyleArraysIntoString({
         passedIn: stylesIn,
@@ -26,17 +20,12 @@ export function Input({ handleChange, hasError, id, stylesIn, type, value, wrapp
     });
 
     return (
-        <ErrorWrapper
-            stylesIn = { wrapperStylesIn }
-            hasError = { hasError }
-        >
-            <input 
-                className={ CSS }
-                id = { id }
-                type = { type ?? "text" }
-                value = { value }
-                onChange = { (e : ChangeEvent<HTMLInputElement>) => handleChange(e) }
-            />
-        </ErrorWrapper>
+        <input 
+            className={ CSS }
+            id = { id }
+            type = { type ?? "text" }
+            value = { value }
+            onChange = { (e : ChangeEvent<HTMLInputElement>) => handleChange(e) }
+        />
     )
 }

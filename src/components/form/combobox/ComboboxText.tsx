@@ -6,11 +6,11 @@ import { ComboboxOptionWrapper } from "../options/ComboboxOptionWrapper";
 import { useOptionsList } from "../options/useOptionsList";
 
 import { ComboboxUI } from "./shared/Combobox";
-import { getOptionIds } from "./shared/utils";
+import { getOptionIds, getOptionDataObject } from "./shared/utils";
 import { T_OptionData, T_PropsComboboxUI } from "./shared/types";
 import { T_UseOptionsListProps } from "../options/useOptionsList";
 
-type T_PropsComboboxText = 
+export type T_PropsComboboxText = 
     Pick<T_PropsComboboxUI, 
         "name"
         | "value"
@@ -82,16 +82,6 @@ export function ComboboxText({
 function TextOptions({ activeId, onOptionPick, optionIdPrefix, options, optionsListId, optionsVisible, showNumResults } : any){
     
     showNumResults = showNumResults ?? false;
-
-    function getOptionDataObject(option : string | T_OptionData){
-        if(typeof option !== 'string' && 'optionId' in option && 'displayText' in option){
-            return option;
-        }
-        return {
-            displayText: option,
-            optionId: option.replaceAll(" ", ""),
-        }
-    }
 
     return <>
     {  optionsVisible

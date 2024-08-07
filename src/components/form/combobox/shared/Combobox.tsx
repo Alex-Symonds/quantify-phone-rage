@@ -16,7 +16,7 @@ import {
         T_PropsComboboxInput,
         T_PropsComboboxUI
     } from "./types";
-import { ErrorWrapper } from "../../errorWrapper/ErrorWrapper";
+
 import { mergeStyleArraysIntoString } from "@/components/utils";
 
 
@@ -28,35 +28,31 @@ export const ComboboxUI = forwardRef(function ComboboxUI(props : T_PropsCombobox
     });
     
     return (
-        <ErrorWrapper
-            hasError = { props.hasError }
+        <div 
+            className={ css } 
+            ref={ ref }
         >
-            <div 
-                className={ css } 
-                ref={ ref }
-            >
-                <ComboboxInput 
-                    inputId={ props.inputId }
-                    activeDescendantId={ props.activeDescendantId }
-                    optionsVisible={ props.optionsVisible }
-                    optionsListId={ props.optionsListId }
+            <ComboboxInput 
+                inputId={ props.inputId }
+                activeDescendantId={ props.activeDescendantId }
+                optionsVisible={ props.optionsVisible }
+                optionsListId={ props.optionsListId }
 
-                    onKeyDown={ (e) => props.onKeyDown(e) }
-                    handleChangeToInput = { props.handleChangeToInput }
-                    name = { props.name }
-                    value = { props.value }
-                />
-                
-                <ComboBoxOptionsToggleButton 
-                    optionsVisible = { props.optionsVisible }
-                    size = { props.size }
-                    toggleOptionVisibility = { props.toggleOptionVisibility }
-                />
+                onKeyDown={ (e) => props.onKeyDown(e) }
+                handleChangeToInput = { props.handleChangeToInput }
+                name = { props.name }
+                value = { props.value }
+            />
+            
+            <ComboBoxOptionsToggleButton 
+                optionsVisible = { props.optionsVisible }
+                size = { props.size }
+                toggleOptionVisibility = { props.toggleOptionVisibility }
+            />
 
-                { props.children }
+            { props.children }
 
-            </div>
-        </ErrorWrapper>
+        </div>
     )
 })
 
