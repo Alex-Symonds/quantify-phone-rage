@@ -13,6 +13,12 @@
   --c-main-900: #6b2323;
   --c-main-950: #450000;
 
+  /* 
+    WCAG AAA Note about contrast:  
+    sidey panel with BG (--c-main-200) = text = (--c-main-900) for contrast
+    Ignore designs, follow this.
+  */
+
   --c-main-saturated: #840000;
   --c-main-saturated-hover: #970101;
   --c-main-saturated-focus: #9c2121;
@@ -31,9 +37,8 @@
   --c-errorText-on-weak:rgb(179, 0, 0)0;
 
   /* ------------------------------------------------- */
-  --c-bodyText-on-light: black;
-  --c-bodyText-on-dark: white;
-
+  --c-bodyText-on-light: rgb(3, 2, 2);
+  --c-bodyText-on-dark: rgb(254, 253, 253);
   --c-labels: #363636;
 
   --c-emphasisText-on-light: var(--c-main-950);
@@ -99,7 +104,21 @@
 
   --formElementBorder: var(--c-main-saturated);
   --formElementBorderHover: var(--c-main-saturated-focus);
-  --formElementBorderFocus:var(--c-main-saturated-focus);
+  --formElementBorderFocus: var(--c-main-saturated-focus);
+
+  --formElementBorderOnSubtle: var(--c-main-saturated);
+  --formElementBorderOnSubtleHover: var(--c-main-saturated-focus);
+  --formElementBorderOnSubtleFocus: var(--c-main-saturated-focus);
+
+  --formElementBorderOnBold: var(--c-main-saturated);
+  --formElementBorderOnBoldHover: var(--c-main-saturated-focus);
+  --formElementBorderOnBoldFocus: var(--c-main-saturated-focus);
+
+
+
+
+
+
 
 
 

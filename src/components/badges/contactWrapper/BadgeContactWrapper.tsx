@@ -1,9 +1,9 @@
-import { BadgeContact, I_BadgeContact } from "../contact/BadgeContact";
+import { BadgeContact, T_PropsBadgeContact } from "../contact/BadgeContact";
 
 import styles from "./BadgeContactWrapper.module.scss";
 
 
-interface I_BadgeComboContactStatus extends Pick<I_BadgeContact, "name" | "role" > {
+interface I_BadgeComboContactStatus extends Pick<T_PropsBadgeContact, "name" | "role" > {
     children?: React.ReactNode
 }
 

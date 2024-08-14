@@ -33,38 +33,3 @@
         width: 100%;
     }
 }
-// .grow{
-//     animation: growCheckboxContents 300ms linear 50ms normal forwards ;
-// }
-// .shrink{
-//     animation: growCheckboxContents 300ms linear 50ms reverse forwards;
-// }
-// @keyframes growCheckboxContents {
-//     from{
-//         height: c.px-to-rem(1);
-//         width: c.px-to-rem(1);
-//     }
-//     to{
-//         height: c.px-to-rem(20);
-//         width: c.px-to-rem(20);
-//     }
-// }
-
-
-// .onChangeAnim{
-//     &-enter{
-//         transform: scale(0.5);
-//     }
-//     &-enter-active {
-//         transform: scale(1);
-//         transition: transform 1000ms linear;
-//     }
-//     &-exit {
-//         transform: scale(1);
-//     }
-//     &-exit-active {
-//         transform: scale(0.5);
-//         transition: transform 1000ms linear;
-//     }
-// }
-

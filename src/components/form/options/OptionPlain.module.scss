@@ -1,34 +1,16 @@
 @use '@/app/_common.scss' as c;
 
 
-@mixin overlaidBorder{
-    content: "";
-    display: block;
-
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    border-style: dotted;
-    border-color: var(--c-bg-strong);
-    border-width: c.px-to-rem(1) 0;
-}
-
-
 .optionPlain{
-   
     padding: c.px-to-rem(4) c.px-to-rem(8);
     
-
     cursor: pointer;
     position: relative;
 
     &:hover{
         @include c.formElement-hover();
         &:after{
-            @include overlaidBorder();
+            @include c.overlaidBorder();
         }
     }
     &:focus{
@@ -37,7 +19,7 @@
     &:active{
         @include c.formElement-active();
         &:after{
-            @include overlaidBorder();
+            @include c.overlaidBorder();
             border-style: dashed;
         }
     }
