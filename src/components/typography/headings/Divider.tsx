@@ -1,5 +1,4 @@
 import { I_HeadingFormatting } from "./types";
-import { prepareStylesForHeadingAndSubtitle } from "./utils";
 
 import { Heading } from "./WithOptionalSubtitleWrapper";
 import styles from "./Divider.module.scss";

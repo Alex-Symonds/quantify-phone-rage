@@ -8,6 +8,10 @@
     flex-flow: wrap;
     gap: c.px-to-rem(6);
 
+    /* 
+    Don't want a double border where input meets bucket,
+    so I'm going to move the bucket up, to cover the input border
+    */
     position: relative;
     z-index: 1;
 
@@ -18,6 +22,7 @@
 }
 
 .default{
+    // Input and bucket borders are 1px normally
     @include c.formElement();
     top: c.px-to-rem(-1);
 
@@ -27,6 +32,7 @@
 }
 
 .error{
+    // Input and bucket borders are 2px when there's an error
     @include c.formElement-error();
     top: c.px-to-rem(-2);
 }

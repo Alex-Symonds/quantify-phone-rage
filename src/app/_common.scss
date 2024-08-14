@@ -20,6 +20,22 @@
     z-index: 9999999;
 }
 
+@mixin overlaidBorder{
+    content: "";
+    display: block;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    border-style: dotted;
+    border-color: var(--c-bg-strong);
+    border-width: px-to-rem(1) 0;
+}
+
 @mixin formElement{
     background: var(--c-bg-weakest);
     border: px-to-rem(1) solid var(--formElementBorder);
