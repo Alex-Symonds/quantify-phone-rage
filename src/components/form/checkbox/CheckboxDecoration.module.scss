@@ -2,12 +2,6 @@
 
 
 .checkbox{
-    height: c.px-to-rem(28);
-    width: c.px-to-rem(28);
-
-    border: c.px-to-rem(3) solid var(--checkboxBorder);
-    border-radius: c.px-to-rem(4);
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,12 +9,16 @@
     height: c.px-to-rem(28);
     width: c.px-to-rem(28);
 
+    // CSS variables cascade, so use those to set pseudo-state colours form the parent
     background: var(--checkboxContrast);
     color: var(--checkboxContrast);
+    border: c.px-to-rem(3) solid var(--checkboxBorder);
+
+    border-radius: c.px-to-rem(4);
 }
 
 .filled{
-    background: var(--checkboxBG);
+    background: var(--checkboxBorder);
 }
 
 .animWrapper{

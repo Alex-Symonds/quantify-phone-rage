@@ -37,32 +37,34 @@
 }
 
 @mixin formElement{
-    background: var(--c-bg-weakest);
+    background: var(--formElementBg);
     border: px-to-rem(1) solid var(--formElementBorder);
     border-radius: px-to-rem(3);
-    color: var(--c-bodyText-on-weakest);
+    color: var(--formElementText);
 }
 
 @mixin formElement-hover{
+    background: var(--formElementBgHover);
     border-color: var(--formElementBorderHover);
-    background: var(--c-bg-main);
-    color: var(--c-highlightText-on-weakish);
+    color: var(---formElementText);
 }
 
 @mixin formElement-focus{
     @include focusFormat();
-    color: var(--c-highlightText-on-weakish);
+    background: var(--formElementBgFocus);
+    border-color: var(--formElementBorderFocus);
+    color: var(--formElementText);
 }
 
 @mixin formElement-active{
     border-color: var(--formElementBorderHover);
     border-radius: px-to-rem(2);
-    background: var(--c-bg-veryWeak);
-    color: var(--c-bodyText-on-veryWeak);
+    background: var(--formElementBgActive);
+    color: var(--formElementTextHighlight);
 }
 
 @mixin formElement-error{
-    background: var(--c-bg-weakest);
+    background: var(--formElementBg);
     border: px-to-rem(2) solid var(--formElementBorder);
     border-radius: px-to-rem(3);
     color: var(--c-errorText-on-weak);

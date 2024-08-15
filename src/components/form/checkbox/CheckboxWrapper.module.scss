@@ -1,6 +1,5 @@
 @use '@/app/_common.scss' as c;
 
-
 .label{
     display: flex;
     align-items: center;
@@ -38,30 +37,30 @@
 }
 
 .onLight{
-    --checkboxBG: var(--button-onLightColour);
-    --checkboxBorder: var(--button-onLightColour);
-    --checkboxContrast: var(--c-main-0);
+    --checkboxBG: var(--formElementBg);
+    --checkboxBorder: var(--formElementBorder);
+    --checkboxContrast: var(--formElementIconOnBorder);
 
     &:hover{
-        --checkboxBG: var(--button-onLightColour-hover);
-        --checkboxBorder: var(--button-onLightColour-hover);
-        --checkboxContrast: var(--c-main-50);
+        --checkboxBG: var(--formElementBgHover);
+        --checkboxBorder: var(--formElementBorderHover);
+        --checkboxContrast: var(--formElementIconOnBorder-hover);
     }
 
     &:focus,
     &:focus-within{
-        --checkboxBG: var(--button-onLightColour-focus);
-        --checkboxBorder: var(--button-onLightColour-focus);
+        --checkboxBG: var(--formElementBgFocus);
+        --checkboxBorder: var(--formElementBorderFocus);
         --checkboxOutline: var(--checkboxBorder) var(--focusOutlineNoColour);
-        --checkboxContrast: var(--c-main-50);
+        --checkboxContrast: var(--formElementIconOnBorder-focus);
 
         outline: var(--checkboxOutline);
     }
 
     &:active{
-        --checkboxBG: var(--button-onLightColour-active);
-        --checkboxBorder: var(--button-onLightColour-active);
-        --checkboxContrast: var(--c-main-100);
+        --checkboxBG: var(--formElementBgActive);
+        --checkboxBorder: var(--formElementBorderActive);
+        --checkboxContrast: var(--formElementIconOnBorder-active);
     }
 
     color: var(--c-labels);

@@ -1,0 +1,23 @@
+@use '@/app/_common.scss' as c;
+
+.label{
+    display: flex;
+
+    cursor: pointer;
+
+    &:hover{
+        --radioBorder: var(--formElementBorderHover);
+    }
+
+    &:focus{
+        --radioBorder: var(--formElementBorderHover);
+
+        @include c.formElement-focus();
+        outline-offset: c.px-to-rem(2);
+    }
+
+    &:active{
+        --radioBorder: var(--formElementBorderHover);
+        --radioBg: 
+    }
+}
