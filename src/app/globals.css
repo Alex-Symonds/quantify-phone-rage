@@ -28,7 +28,6 @@
   --c-main-saturated-activeSecondary: #a70000;
 
 
-  
   --c-tone-900: #212121;
 
   --c-green: #1c9600;
@@ -40,8 +39,8 @@
   --c-bodyText-on-light: rgb(3, 2, 2);
   --c-bodyText-on-dark: rgb(254, 253, 253);
   --c-labels: #363636;
-
   --c-emphasisText-on-light: var(--c-main-950);
+
 
   --c-bg-main: rgb(255, 253, 253);
   --c-bodyText-on-main: var(--c-bodyText-on-light);
@@ -103,28 +102,26 @@
   --tagReadOnlyBgContrast: var(--c-main-0);
 
   --formElementBorder: var(--c-main-saturated);
-  --formElementBorderHover: var(--c-main-saturated-focus);
+  --formElementBorderHover: var(--c-main-saturated-hover);
   --formElementBorderFocus: var(--c-main-saturated-focus);
+  --formElementBorderActive: var(--c-main-saturated-active);
+  
+  --formElementIconOnBorder: var(--c-main-0);
+  --formElementIconOnBorder-hover: var(--c-main-50);
+  --formElementIconOnBorder-focus: var(--c-main-50);
+  --formElementIconOnBorder-active: var(--c-main-100);
 
-  --formElementBorderOnSubtle: var(--c-main-saturated);
-  --formElementBorderOnSubtleHover: var(--c-main-saturated-focus);
-  --formElementBorderOnSubtleFocus: var(--c-main-saturated-focus);
+  --formElementBg: var(--c-bg-weakest);
+  --formElementBgHover: #faf7f7; /* This should be a subtle change. The next shade up wasn't subtle enough */
+  --formElementBgFocus: var(--c-bg-weakest);
+  --formElementBgActive: var(--c-bg-main);
 
-  --formElementBorderOnBold: var(--c-main-saturated);
-  --formElementBorderOnBoldHover: var(--c-main-saturated-focus);
-  --formElementBorderOnBoldFocus: var(--c-main-saturated-focus);
-
-
-
-
-
-
-
-
-
-
+  --formElementText: var(--c-bodyText-on-weakest);
+  --formElementTextHighlight: var(--c-highlightText-on-weakish);
 
   --focusOutlineNoColour: 1px dotted;
+
+
 
   --max-width: 1100px;
   --border-radius: 12px;

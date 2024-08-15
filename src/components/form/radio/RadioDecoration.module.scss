@@ -1,0 +1,41 @@
+@use '@/app/_common.scss' as c;
+
+/*
+    CSS variables
+
+    Assumptions: 
+    1) The design will always have the border and "filled" BG as
+       the same colour, including for pseudostate changes
+    2) The parent will set these for pseudostate changes
+
+    --radioBorder
+    --radioBg
+    --radioSize
+*/
+
+$defaultSize: c.px-to-rem(24);
+
+
+.radio{
+    height: var(--radioSize, #{$defaultSize});
+    width: var(--radioSize, #{$defaultSize});
+    border-radius: 100%;
+
+    background: var(--radioBg, var(--formElementBg));
+    border: c.px-to-rem(2) solid var(--radioBorder, var(--formElementBorder));
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filler{
+    --fillerSize: calc(var(--radioSize, #{$defaultSize}) - #{c.px-to-rem(8)});
+
+    display: block;
+    height: var(--fillerSize);
+    width: var(--fillerSize);
+    border-radius: 100%;
+
+    background: var(--radioBorder, var(--formElementBorder));
+}
